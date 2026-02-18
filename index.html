@@ -7,7 +7,7 @@
   <meta name="description" content="Приглашаем вас разделить с нами самый счастливый день нашей жизни" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <style>
     /* ── Сброс и базовые стили ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,6 +26,7 @@
 
       --font-serif:  'Cormorant Garamond', Georgia, serif;
       --font-sans:   'Montserrat', sans-serif;
+      --font-script: 'Pinyon Script', cursive;
 
       --section-pad: clamp(4rem, 10vw, 8rem);
       --radius:      4px;
@@ -139,12 +140,13 @@
     }
 
     .hero-names {
-      font-family: var(--font-serif);
+      font-family: var(--font-script);
       font-size: clamp(3.5rem, 12vw, 8rem);
       font-weight: 300;
       color: var(--brown);
       line-height: 1;
       margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
     }
 
     .hero-ampersand {
@@ -318,7 +320,7 @@
       font-size: 1.1rem;
       color: var(--text);
       font-style: italic;
-      line-height: 1.8;
+      line-height: 2;
     }
 
     .story-divider {
@@ -564,7 +566,7 @@
     }
 
     .footer-names {
-      font-family: var(--font-serif);
+      font-family: var(--font-script);
       font-size: 2rem;
       color: var(--gold);
       font-weight: 300;
@@ -589,6 +591,10 @@
       .nav { gap: 1.2rem; }
       .schedule-item { grid-template-columns: 2rem 5rem 1fr; gap: 0.5rem; }
       .venue-card { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --section-pad: 3rem; }
     }
   </style>
 </head>
