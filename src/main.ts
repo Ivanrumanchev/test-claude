@@ -8,9 +8,9 @@ const WEDDING_CONFIG: WeddingConfig = {
   groom: 'Иван',
   date: new Date('2026-06-10T09:15:00'),
   venue: {
-    name: 'Усадьба «Белый сад»',
-    address: 'г. Москва, Рублёвское шоссе, 15',
-    mapUrl: 'https://maps.google.com',
+    name: 'Русская рыбалка в Комарово',
+    address: 'пос. Комарово, Приморское шоссе, 452',
+    mapUrl: 'https://maps.google.com/maps?q=Русская+рыбалка+Комарово',
   },
   schedule: [
     { time: '9:15',  title: 'Церемония бракосочетания', icon: '💍' },
