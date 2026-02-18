@@ -1,5 +1,6 @@
 import type { WeddingConfig, RSVPFormData, RSVPStatus } from './types.js';
 import { startCountdown, formatCountdownUnit } from './countdown.js';
+import { initGallery } from './gallery.js';
 
 // ─── Конфигурация свадьбы ────────────────────────────────────────────────────
 
@@ -199,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCountdown();
   renderSchedule();
+  initGallery();
   initSmoothScroll();
   initScrollAnimations();
 

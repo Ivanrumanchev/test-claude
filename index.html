@@ -405,6 +405,125 @@
       background: var(--gold-light);
     }
 
+    /* ── Галерея ──────────────────────────────────────────────────── */
+    .gallery-section {
+      padding: var(--section-pad) clamp(1rem, 5vw, 4rem);
+      background: var(--ivory);
+    }
+
+    .gallery-grid {
+      columns: 3;
+      column-gap: 0.8rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid { columns: 2; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { columns: 1; }
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:hover .gallery-placeholder {
+      transform: scale(1.03);
+    }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 200px;
+      background: var(--ph-color, var(--gold-light));
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-placeholder--tall { height: 300px; }
+
+    /* ── Lightbox ─────────────────────────────────────────────────── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(43, 29, 17, 0.96);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox--visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: var(--radius);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--gold-light);
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--gold-light);
+      font-size: 3rem;
+      cursor: pointer;
+      padding: 1rem;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+      line-height: 1;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover { opacity: 1; }
+
+    .lightbox-prev { left: 1rem; }
+    .lightbox-next { right: 1rem; }
+
+    @media (max-width: 480px) {
+      .lightbox-prev { left: 0.2rem; }
+      .lightbox-next { right: 0.2rem; }
+    }
+
     /* ── Расписание ───────────────────────────────────────────────── */
     .schedule-section {
       padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem);
@@ -748,6 +867,32 @@
           заслуживает продолжения навсегда.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Галерея -->
+  <section class="gallery-section" id="gallery">
+    <h2 class="section-title animate-on-scroll">Наши моменты</h2>
+    <span class="section-subtitle animate-on-scroll">фотографии</span>
+
+    <div class="gallery-grid animate-on-scroll" id="gallery-grid">
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#e8d5b0"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#d4b896"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#c9a96e"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#b8945a"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#e8d5b0"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#d4b896"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#c9a96e"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#b8945a"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#e8d5b0"></div></div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+      <button class="lightbox-close" aria-label="Закрыть">✕</button>
+      <button class="lightbox-prev" aria-label="Предыдущее фото">‹</button>
+      <img class="lightbox-img" alt="Фото" />
+      <button class="lightbox-next" aria-label="Следующее фото">›</button>
     </div>
   </section>
 
