@@ -159,6 +159,7 @@ function initMobileNav(): void {
   toggle.addEventListener('click', () => {
     const isOpen = links.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
     const icon = toggle.querySelector('.nav-toggle-icon');
     if (icon) icon.textContent = isOpen ? '✕' : '☰';
   });
@@ -167,6 +168,7 @@ function initMobileNav(): void {
     a.addEventListener('click', () => {
       links.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Открыть меню');
       const icon = toggle.querySelector('.nav-toggle-icon');
       if (icon) icon.textContent = '☰';
     });
