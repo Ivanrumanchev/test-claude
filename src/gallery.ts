@@ -41,6 +41,13 @@ export function initGallery(): void {
     openLightbox((state.currentIndex + 1) % state.images.length);
   }
 
+  const onKeydown = (e: KeyboardEvent): void => {
+    if (!lightbox!.classList.contains('lightbox--visible')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  };
+
   state.images.forEach((item, i) => {
     item.addEventListener('click', () => openLightbox(i));
   });
@@ -49,12 +56,7 @@ export function initGallery(): void {
   prevBtn.addEventListener('click', showPrev);
   nextBtn.addEventListener('click', showNext);
 
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox!.classList.contains('lightbox--visible')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') showPrev();
-    if (e.key === 'ArrowRight') showNext();
-  });
+  document.addEventListener('keydown', onKeydown);
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
