@@ -68,6 +68,74 @@ function renderSchedule(): void {
   container.appendChild(fragment);
 }
 
+// ─── Календарь Save the Date ──────────────────────────────────────────────────
+
+function renderSaveDateCalendar(): void {
+  const grid = document.getElementById('calendar-grid');
+  const monthLabel = document.getElementById('save-date-month');
+  if (!grid || !monthLabel) return;
+
+  const date = WEDDING_CONFIG.date;
+  const year = date.getFullYear();
+  const month = date.getMonth(); // 0-based
+  const highlightDay = date.getDate();
+
+  // Month label in Russian
+  const monthNames = [
+    'январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
+    'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь',
+  ];
+  monthLabel.textContent = `${monthNames[month]} ${year}`;
+
+  // Weekday headers (Mon-first)
+  const weekdays = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+  const fragment = document.createDocumentFragment();
+
+  weekdays.forEach((day) => {
+    const cell = document.createElement('div');
+    cell.className = 'calendar-weekday';
+    cell.textContent = day;
+    fragment.appendChild(cell);
+  });
+
+  // First day of the month: getDay() returns 0=Sun..6=Sat, convert to Mon=0..Sun=6
+  const firstDate = new Date(year, month, 1);
+  const firstDow = (firstDate.getDay() + 6) % 7; // Mon=0, Sun=6
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDow; i++) {
+    const empty = document.createElement('div');
+    empty.className = 'calendar-day calendar-day--empty';
+    empty.textContent = '·';
+    fragment.appendChild(empty);
+  }
+
+  // Day cells
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('div');
+
+    if (d === highlightDay) {
+      cell.className = 'calendar-day calendar-day--highlighted';
+      cell.innerHTML = `
+        ${d}
+        <svg class="calendar-heart" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M50 30 C50 15 37 5 25 10 C13 15 5 27 5 38 C5 55 25 70 50 82 C75 70 95 55 95 38 C95 27 87 15 75 10 C63 5 50 15 50 30 Z"
+                stroke="var(--gold)" stroke-width="3" fill="rgba(201,169,110,0.08)"/>
+        </svg>
+      `;
+    } else {
+      cell.className = 'calendar-day';
+      cell.textContent = String(d);
+    }
+
+    fragment.appendChild(cell);
+  }
+
+  grid.appendChild(fragment);
+}
+
 // ─── RSVP форма ───────────────────────────────────────────────────────────────
 
 function handleRSVP(event: Event): void {
@@ -200,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCountdown();
   renderSchedule();
+  renderSaveDateCalendar();
   initGallery();
   initSmoothScroll();
   initScrollAnimations();
