@@ -119,11 +119,17 @@ function renderSaveDateCalendar(): void {
 
     if (d === highlightDay) {
       cell.className = 'calendar-day calendar-day--highlighted';
+      const heartPath = 'M50 30 C50 15 37 5 25 10 C13 15 5 27 5 38 C5 55 25 70 50 82 C75 70 95 55 95 38 C95 27 87 15 75 10 C63 5 50 15 50 30 Z';
       cell.innerHTML = `
         ${d}
         <svg class="calendar-heart" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M50 30 C50 15 37 5 25 10 C13 15 5 27 5 38 C5 55 25 70 50 82 C75 70 95 55 95 38 C95 27 87 15 75 10 C63 5 50 15 50 30 Z"
-                stroke="var(--gold)" stroke-width="3" fill="rgba(201,169,110,0.08)"/>
+          <path d="${heartPath}" stroke="var(--gold)" stroke-width="3" fill="rgba(201,169,110,0.08)"/>
+        </svg>
+        <svg class="calendar-heart-ripple calendar-heart-ripple--1" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="${heartPath}" stroke="var(--gold)" stroke-width="2" fill="none"/>
+        </svg>
+        <svg class="calendar-heart-ripple calendar-heart-ripple--2" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="${heartPath}" stroke="var(--gold)" stroke-width="2" fill="none"/>
         </svg>
       `;
     } else {
