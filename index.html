@@ -838,6 +838,34 @@
       z-index: -1;
     }
 
+    @keyframes calendar-heart-ripple-1 {
+      0%   { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0;   transform: translate(-50%, -50%) scale(2); }
+    }
+
+    @keyframes calendar-heart-ripple-2 {
+      0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0;   transform: translate(-50%, -50%) scale(3); }
+    }
+
+    .calendar-heart-ripple {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 3em;
+      height: 2.8em;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .calendar-heart-ripple--1 {
+      animation: calendar-heart-ripple-1 2s ease-in-out infinite;
+    }
+
+    .calendar-heart-ripple--2 {
+      animation: calendar-heart-ripple-2 2s ease-in-out infinite;
+    }
+
     /* ── Адаптив ──────────────────────────────────────────────────── */
     @media (max-width: 480px) {
       .schedule-item { grid-template-columns: 2rem 5rem 1fr; gap: 0.5rem; }
