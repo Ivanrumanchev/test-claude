@@ -764,17 +764,7 @@
       letter-spacing: 0.1em;
     }
 
-    /* ── Адаптив ──────────────────────────────────────────────────── */
-    @media (max-width: 480px) {
-      .schedule-item { grid-template-columns: 2rem 5rem 1fr; gap: 0.5rem; }
-      .venue-card { padding: 2rem 1.5rem; }
-    }
-
-    @media (max-width: 640px) {
-      :root { --section-pad: 3rem; }
-    }
-
-    /* ── Save the Date (Календарь) ────────────────────────────────── */
+    /* ── Save the Date (Календарь) ──────────────────────────── */
     .save-date-section {
       padding: var(--section-pad) 2rem;
       background: var(--cream);
@@ -799,9 +789,8 @@
     }
 
     .calendar-grid {
-      display: inline-grid;
+      display: grid;
       grid-template-columns: repeat(7, 1fr);
-      gap: 0;
       margin: 0 auto;
       max-width: 380px;
       width: 100%;
@@ -836,7 +825,6 @@
     .calendar-day--highlighted {
       font-weight: 600;
       color: var(--brown);
-      z-index: 1;
     }
 
     .calendar-day--highlighted .calendar-heart {
@@ -848,7 +836,16 @@
       height: 2.8em;
       pointer-events: none;
       z-index: -1;
-      overflow: visible;
+    }
+
+    /* ── Адаптив ──────────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .schedule-item { grid-template-columns: 2rem 5rem 1fr; gap: 0.5rem; }
+      .venue-card { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --section-pad: 3rem; }
     }
   </style>
 </head>
