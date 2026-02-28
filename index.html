@@ -773,6 +773,83 @@
     @media (max-width: 640px) {
       :root { --section-pad: 3rem; }
     }
+
+    /* ── Save the Date (Календарь) ────────────────────────────────── */
+    .save-date-section {
+      padding: var(--section-pad) 2rem;
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .save-date-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1;
+      letter-spacing: 0.1em;
+    }
+
+    .save-date-month {
+      font-family: var(--font-script);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--gold);
+      display: block;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .calendar-grid {
+      display: inline-grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0;
+      margin: 0 auto;
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .calendar-weekday {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+
+    .calendar-day {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 300;
+      color: var(--text);
+      padding: 0.6rem 0;
+      text-align: center;
+      position: relative;
+      line-height: 1;
+    }
+
+    .calendar-day--empty {
+      visibility: hidden;
+    }
+
+    .calendar-day--highlighted {
+      font-weight: 600;
+      color: var(--brown);
+      z-index: 1;
+    }
+
+    .calendar-day--highlighted .calendar-heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3em;
+      height: 2.8em;
+      pointer-events: none;
+      z-index: -1;
+      overflow: visible;
+    }
   </style>
 </head>
 <body>
