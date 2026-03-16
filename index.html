@@ -318,8 +318,18 @@
 
     /* ── История ──────────────────────────────────────────────────── */
     .story-section {
-      padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem);
-      background: var(--cream);
+      padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem) calc(var(--section-pad) + 60px);
+      background: var(--sage);
+      position: relative;
+    }
+    .story-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: -5%;
+      width: 110%;
+      height: 80px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0;
     }
 
     .story-grid {
@@ -341,7 +351,7 @@
     .story-year {
       font-family: var(--font-serif);
       font-size: 3rem;
-      color: var(--gold);
+      color: rgba(255,255,255,0.5);
       font-weight: 300;
       display: block;
       line-height: 1;
@@ -351,14 +361,14 @@
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-light);
+      color: rgba(255,255,255,0.6);
       margin: 0.5rem 0 1rem;
     }
 
     .story-text {
       font-family: var(--font-serif);
       font-size: 1.1rem;
-      color: var(--text);
+      color: rgba(255,255,255,0.9);
       font-style: italic;
       line-height: 2;
     }
@@ -375,7 +385,7 @@
     .story-divider span {
       font-family: var(--font-serif);
       font-size: 2rem;
-      color: var(--gold);
+      color: rgba(255,255,255,0.4);
       font-style: italic;
     }
 
@@ -383,13 +393,13 @@
       content: '';
       width: 1px;
       height: 40px;
-      background: var(--gold-light);
+      background: rgba(255,255,255,0.2);
     }
 
     /* ── Галерея ──────────────────────────────────────────────────── */
     .gallery-section {
       padding: var(--section-pad) clamp(1rem, 5vw, 4rem);
-      background: var(--ivory);
+      background: var(--white);
     }
 
     .gallery-grid {
@@ -430,7 +440,7 @@
     .gallery-placeholder {
       width: 100%;
       height: 200px;
-      background: var(--ph-color, var(--gold-light));
+      background: var(--ph-color, #c5dbd9);
       transition: transform 0.4s ease;
     }
 
@@ -507,8 +517,18 @@
 
     /* ── Расписание ───────────────────────────────────────────────── */
     .schedule-section {
-      padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem);
-      background: var(--ivory);
+      padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem) calc(var(--section-pad) + 60px);
+      background: var(--sage);
+      position: relative;
+    }
+    .schedule-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: -5%;
+      width: 110%;
+      height: 80px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0;
     }
 
     .schedule-list {
@@ -525,7 +545,7 @@
       align-items: center;
       gap: 1rem;
       padding: 1.2rem 0;
-      border-bottom: 1px solid var(--gold-light);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
     }
     .schedule-item:last-child { border-bottom: none; }
 
@@ -534,7 +554,7 @@
     .schedule-time {
       font-family: var(--font-serif);
       font-size: 1.3rem;
-      color: var(--gold-dark);
+      color: rgba(255,255,255,0.7);
       font-weight: 300;
     }
 
@@ -542,14 +562,14 @@
       font-family: var(--font-sans);
       font-size: 0.85rem;
       font-weight: 400;
-      color: var(--text);
+      color: var(--white);
       letter-spacing: 0.05em;
     }
 
     /* ── Место проведения ─────────────────────────────────────────── */
     .venue-section {
       padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem);
-      background: var(--cream);
+      background: var(--white);
       text-align: center;
     }
 
@@ -558,8 +578,8 @@
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-      background: var(--ivory);
-      border: 1px solid var(--gold-light);
+      background: var(--off-white);
+      border: 1px solid rgba(74,122,120,0.2);
       padding: 3rem 4rem;
       max-width: 480px;
       width: 100%;
@@ -570,13 +590,13 @@
     .venue-name {
       font-family: var(--font-serif);
       font-size: 1.8rem;
-      color: var(--brown);
+      color: var(--sage-dark);
       font-weight: 300;
     }
 
     .venue-address {
       font-size: 0.8rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       letter-spacing: 0.1em;
     }
 
@@ -613,16 +633,26 @@
 
     /* ── RSVP форма ───────────────────────────────────────────────── */
     .rsvp-section {
-      padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem);
-      background: var(--ivory);
+      padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem) calc(var(--section-pad) + 60px);
+      background: var(--sage);
       text-align: center;
+      position: relative;
+    }
+    .rsvp-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: -5%;
+      width: 110%;
+      height: 80px;
+      background: var(--sage-dark);
+      border-radius: 50% 50% 0 0;
     }
 
     .rsvp-intro {
       font-family: var(--font-serif);
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       font-style: italic;
-      color: var(--text-light);
+      color: rgba(255,255,255,0.8);
       max-width: 480px;
       margin: 0 auto 3rem;
     }
@@ -647,7 +677,7 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold-dark);
+      color: rgba(255,255,255,0.7);
     }
 
     .form-input, .form-select, .form-textarea {
@@ -655,16 +685,17 @@
       padding: 0.8rem 1rem;
       font-family: var(--font-sans);
       font-size: 0.875rem;
-      color: var(--text);
-      background: var(--cream);
-      border: 1px solid var(--gold-light);
+      color: var(--white);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
       border-radius: var(--radius);
       outline: none;
       transition: border-color 0.3s;
       appearance: none;
     }
+    .form-input::placeholder { color: rgba(255,255,255,0.4); }
     .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--gold);
+      border-color: rgba(255,255,255,0.6);
     }
 
     .form-textarea { resize: vertical; min-height: 100px; }
@@ -681,11 +712,11 @@
       gap: 0.5rem;
       cursor: pointer;
       font-size: 0.85rem;
-      color: var(--text);
+      color: rgba(255,255,255,0.9);
     }
 
     .radio-label input[type="radio"] {
-      accent-color: var(--gold);
+      accent-color: var(--white);
       width: 1rem;
       height: 1rem;
     }
@@ -712,8 +743,8 @@
       text-align: center;
     }
     .notification--success {
-      background: var(--brown);
-      color: var(--gold-light);
+      background: var(--sage-dark);
+      color: rgba(255,255,255,0.9);
     }
     .notification--error {
       background: #8b3a3a;
@@ -727,7 +758,7 @@
     /* ── Футер ────────────────────────────────────────────────────── */
     .footer {
       padding: 3rem 2rem;
-      background: var(--dark);
+      background: var(--sage-dark);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -738,7 +769,7 @@
     .footer-names {
       font-family: var(--font-script);
       font-size: 2rem;
-      color: var(--gold);
+      color: rgba(255,255,255,0.9);
       font-weight: 300;
       font-style: italic;
     }
@@ -747,12 +778,12 @@
       font-size: 0.65rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: rgba(201,169,110,0.5);
+      color: rgba(255,255,255,0.4);
     }
 
     .footer-hashtag {
       font-size: 0.75rem;
-      color: rgba(201,169,110,0.4);
+      color: rgba(255,255,255,0.3);
       letter-spacing: 0.1em;
     }
 
@@ -963,7 +994,7 @@
   </section>
 
   <!-- История -->
-  <section class="story-section" id="story">
+  <section class="story-section section--sage" id="story">
     <h2 class="section-title animate-on-scroll">Наша история</h2>
     <span class="section-subtitle animate-on-scroll">как всё начиналось</span>
 
@@ -998,15 +1029,15 @@
     <span class="section-subtitle animate-on-scroll">фотографии</span>
 
     <div class="gallery-grid animate-on-scroll" id="gallery-grid">
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#e8d5b0"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#d4b896"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#c9a96e"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#b8945a"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#e8d5b0"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#d4b896"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#c9a96e"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#b8945a"></div></div>
-      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#e8d5b0"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#c5dbd9"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#a8c9c7"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#8ab8b6"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#6aa6a4"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#c5dbd9"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#a8c9c7"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#8ab8b6"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder" style="--ph-color:#6aa6a4"></div></div>
+      <div class="gallery-item" data-full=""><div class="gallery-placeholder gallery-placeholder--tall" style="--ph-color:#c5dbd9"></div></div>
     </div>
 
     <!-- Lightbox -->
@@ -1019,7 +1050,7 @@
   </section>
 
   <!-- Программа -->
-  <section class="schedule-section" id="schedule">
+  <section class="schedule-section section--sage" id="schedule">
     <h2 class="section-title animate-on-scroll">Программа вечера</h2>
     <span class="section-subtitle animate-on-scroll">10 июня 2026</span>
 
@@ -1045,9 +1076,9 @@
   </section>
 
   <!-- RSVP -->
-  <section class="rsvp-section" id="rsvp">
-    <h2 class="section-title animate-on-scroll">Подтвердите участие</h2>
-    <span class="section-subtitle animate-on-scroll">просим ответить до 1 мая 2026</span>
+  <section class="rsvp-section section--sage" id="rsvp">
+    <h2 class="section-title animate-on-scroll">Анкета гостя</h2>
+    <span class="section-subtitle animate-on-scroll">пожалуйста заполните анкету, чтобы мы знали, что вы придёте</span>
 
     <p class="rsvp-intro animate-on-scroll">
       Ваш ответ поможет нам сделать этот вечер незабываемым для каждого гостя.
