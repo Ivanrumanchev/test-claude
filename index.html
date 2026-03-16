@@ -13,16 +13,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:       #faf6f1;
-      --ivory:       #f5ede0;
-      --gold:        #c9a96e;
-      --gold-light:  #e8d5b0;
-      --gold-dark:   #a07c40;
-      --brown:       #5c3d2e;
-      --dark:        #2b1d11;
-      --text:        #4a3728;
-      --text-light:  #8a7060;
+      --sage:        #4a7a78;
+      --sage-dark:   #3a6360;
+      --sage-light:  #6a9e9b;
       --white:       #ffffff;
+      --off-white:   #f5f5f3;
+      --text:        #2c2c2c;
+      --text-muted:  #666660;
+      --text-on-sage:#ffffff;
 
       --font-serif:  'Cormorant Garamond', Georgia, serif;
       --font-sans:   'Montserrat', sans-serif;
@@ -825,6 +823,7 @@
     .calendar-day--highlighted {
       font-weight: 600;
       color: var(--brown);
+      isolation: isolate;
     }
 
     .calendar-day--highlighted .calendar-heart {
