@@ -13,9 +13,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --sage:        #4a7a78;
-      --sage-dark:   #3a6360;
-      --sage-light:  #6a9e9b;
+      --sage:        #4B6382;
+      --sage-dark:   #4B6382;
+      --sage-light:  #4B6382;
       --white:       #ffffff;           /* backgrounds */
       --off-white:   #f5f5f3;
       --text:        #2c2c2c;
@@ -95,12 +95,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       text-align: center;
-      padding: calc(100dvh / 6) 2rem 2rem;
+      padding: 2rem;
       background: var(--sage-dark);
       overflow: hidden;
-      border-radius: 0 0 30% 30%;
+      border-radius: 0 0 25% 25%;
+      z-index: 1;
     }
 
     .hero-photo {
@@ -206,35 +207,45 @@
 
     /* ── Обратный отсчёт ──────────────────────────────────────────── */
     .countdown-section {
-      padding: var(--section-pad) 2rem;
       position: relative;
       overflow: hidden;
       text-align: center;
-      margin: 0 16.666%;
+      margin: 5%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 8%;
+      gap: 0;
     }
 
     .countdown-grid {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
+      align-items: center;
+      gap: 2vw;
+      width: 100%;
+      flex-wrap: nowrap;
+      padding: 0 5%;
     }
 
     .countdown-item {
+      flex: 1;
+      min-width: 0;
+      aspect-ratio: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.4rem;
+      justify-content: center;
+      gap: 0.3em;
       background: var(--sage);
-      border-radius: 999px;
-      padding: 1.2rem 1.5rem;
-      min-width: 70px;
+      border-radius: 50%;
     }
 
     .countdown-number {
       font-family: var(--font-sans);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-size: clamp(1rem, 3vw, 2.2rem);
       font-weight: 700;
       color: var(--white);
       line-height: 1;
@@ -243,9 +254,9 @@
     }
 
     .countdown-label {
-      font-size: 0.55rem;
+      font-size: clamp(0.4rem, 0.8vw, 0.6rem);
       font-weight: 500;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.75);
     }
@@ -376,6 +387,8 @@
     .schedule-section {
       padding: var(--section-pad) clamp(1.5rem, 8vw, 6rem);
       background: var(--sage);
+      border-radius: 120%;
+      overflow: hidden;
     }
 
     .schedule-list {
@@ -631,6 +644,8 @@
       background: var(--sage);
       text-align: center;
       position: relative;
+      border-radius: 25% 25% 0 0;
+      margin-top: -5dvh;
     }
 
     .save-date-heading {
@@ -935,12 +950,12 @@
   <section class="dresscode-section" id="dresscode">
     <h2 class="dresscode-title animate-on-scroll">DRESS CODE</h2>
     <div class="dresscode-swatches animate-on-scroll">
-      <div class="dresscode-swatch" style="--swatch:#3a6360"></div>
-      <div class="dresscode-swatch" style="--swatch:#6a9e9b"></div>
-      <div class="dresscode-swatch" style="--swatch:#c8b89a"></div>
-      <div class="dresscode-swatch" style="--swatch:#8b7355"></div>
-      <div class="dresscode-swatch" style="--swatch:#f5f5f3; outline: 1px solid #d0d0cc;"></div>
-      <div class="dresscode-swatch" style="--swatch:#2c2c2c"></div>
+      <div class="dresscode-swatch" style="--swatch:#071739"></div>
+      <div class="dresscode-swatch" style="--swatch:#4B6382"></div>
+      <div class="dresscode-swatch" style="--swatch:#A4B5C4"></div>
+      <div class="dresscode-swatch" style="--swatch:#CDD5DB"></div>
+      <div class="dresscode-swatch" style="--swatch:#A68868"></div>
+      <div class="dresscode-swatch" style="--swatch:#E3C39D"></div>
     </div>
   </section>
 
@@ -956,8 +971,6 @@
   <!-- Обратный отсчёт -->
   <section class="countdown-section" id="countdown">
     <img class="countdown-photo" src="photo3.jpg" alt="" />
-    <h2 class="section-title animate-on-scroll">До нашего торжества</h2>
-    <span class="section-subtitle animate-on-scroll">осталось совсем немного</span>
 
     <div class="countdown-grid animate-on-scroll">
       <div class="countdown-item">
