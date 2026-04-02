@@ -17,7 +17,7 @@ export interface WeddingVenue {
 export interface ScheduleItem {
   readonly time: string;
   readonly title: string;
-  readonly icon: string;
+  readonly svg: string;
 }
 
 export interface CountdownResult {
