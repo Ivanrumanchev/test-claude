@@ -15,17 +15,17 @@ const WEDDING_CONFIG: WeddingConfig = {
   schedule: [
     {
       time: '9:40',
-      title: 'Регистрация брака во Дворце бракосочетания №2 (для желающих)',
+      title: 'Регистрация брака',
       svg: `<img src="https://cdn-icons-png.flaticon.com/128/706/706455.png" alt="">`,
     },
     {
       time: '15:00',
-      title: 'Сбор гостей в "Русской рыбалке"',
+      title: 'Сбор гостей',
       svg: `<img src="https://cdn-icons-png.flaticon.com/128/2776/2776074.png" alt="">`,
     },
     {
       time: '16:00',
-      title: 'Церемония бракосочетания и начало программы',
+      title: 'Церемония и банкет',
       svg: `<img src="https://cdn-icons-png.flaticon.com/128/3314/3314457.png" alt="">`,
     },
     {
@@ -35,7 +35,7 @@ const WEDDING_CONFIG: WeddingConfig = {
     },
     {
       time: '23:00',
-      title: 'Завершение вечера, трансфер до метро',
+      title: 'Завершение банкета, трансфер до метро',
       svg: `<img src="https://cdn-icons-png.flaticon.com/128/4274/4274245.png" alt="">`,
     },
   ],
