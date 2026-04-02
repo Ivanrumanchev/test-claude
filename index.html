@@ -149,7 +149,7 @@
       font-weight: 300;
       letter-spacing: -0.02em;
       color: var(--white);
-      margin-bottom: 2rem;
+      margin-bottom: 0;
       position: relative;
       z-index: 3;
     }
@@ -526,7 +526,7 @@
     }
     .details-section .section-title { color: var(--sage); }
     .details-section .section-subtitle { color: var(--text-muted); }
-    .details-section .sage-line { background: var(--sage); opacity: 0.3; }
+    .details-section .sage-line { background: var(--sage); opacity: 0.3; margin-bottom: 1rem; }
 
     .rsvp-intro {
       font-family: var(--font-serif);
@@ -729,16 +729,18 @@
 
     .photo-strip-text {
       position: absolute;
-      top: 10%;
+      top: 7%;
       left: 0;
       right: 0;
-      padding: 0 2rem;
+      padding: 1rem 2rem;
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
       text-align: center;
       line-height: normal;
       font-size: 1rem;
+      background: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(0.5px);
     }
 
     .photo-strip-text p {
@@ -913,8 +915,7 @@
   <div class="photo-strip">
     <img src="photo2.png" alt="" />
     <div class="photo-strip-text">
-      <p>Этим летом состоится очень важное событие для нас — наша свадьба.</p>
-      <p>И этот день мы не можем представить без вас!</p>
+      <p>Этим летом состоится очень важное событие для нас — наша свадьба, и этот день мы не можем представить без вас!</p>
       <p>Поэтому мы приглашаем вас разделить с нами этот долгожданный праздник!</p>
     </div>
   </div>
@@ -991,19 +992,19 @@
     <h2 class="section-title animate-on-scroll">Детали</h2>
     <div class="sage-line animate-on-scroll"></div>
     <p class="rsvp-intro animate-on-scroll">
-      Торжество будет проходить в Комарово. Добраться можно на электричке от Удельной или с Финляндского вокзала, а также на автобусах 211 и 680.
+      Торжество будет проходить в Комарово. Добраться до места можно на электричке от Удельной или Финляндского вокзала, а также на автобусах № 211 и № 680.
     </p>
     <div class="sage-line animate-on-scroll"></div>
     <p class="rsvp-intro animate-on-scroll">
-      Пожалуйста, воздержитесь от покупки цветов, так как долго наслаждаться их красотой мы не сможем.
+      Пожалуйста, воздержитесь от покупки цветов, поскольку после свадьбы мы уезжаем и долго наслаждаться их красотой не сможем.
     </p>
     <div class="sage-line animate-on-scroll"></div>
     <p class="rsvp-intro animate-on-scroll">
-      Свадьба будет проходить на берегу Финского залива. Если захочется, можно будет погулять по пляжу или даже поплавать.
+      Ресторан находится на берегу Финского залива. При желании и хорошей погоде можно будет погулять по пляжу или даже искупаться.
     </p>
     <div class="sage-line animate-on-scroll"></div>
     <p class="rsvp-intro animate-on-scroll">
-      На территории будет мини-зоопарк, можно будет поздороваться с милейшими кроликами и козликами.
+      На территории есть мини-зоопарк, где можно увидеть милейших кроликов и козликов.
     </p>
   </section>
 

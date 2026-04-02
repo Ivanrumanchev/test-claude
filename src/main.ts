@@ -35,7 +35,7 @@ const WEDDING_CONFIG: WeddingConfig = {
     },
     {
       time: '23:00',
-      title: 'Завершение, трансфер до метро',
+      title: 'Завершение банкета, трансфер до метро',
       svg: `<img src="https://cdn-icons-png.flaticon.com/128/4274/4274245.png" alt="">`,
     },
   ],
