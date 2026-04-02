@@ -72,7 +72,7 @@ function renderSchedule(): void {
 
   const fragment = document.createDocumentFragment();
 
-  WEDDING_CONFIG.schedule.forEach(({ time, title, svg }) => {
+  WEDDING_CONFIG.schedule.forEach(({ time, svg }) => {
     const item = document.createElement('div');
     item.className = 'timeline-item';
     item.innerHTML = `
@@ -82,7 +82,6 @@ function renderSchedule(): void {
       </div>
       <div class="timeline-content">
         <span class="timeline-time">${time}</span>
-        <span class="timeline-title">${title}</span>
       </div>
     `;
     fragment.appendChild(item);
