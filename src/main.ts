@@ -13,11 +13,31 @@ const WEDDING_CONFIG: WeddingConfig = {
     mapUrl: 'https://maps.google.com/maps?q=Русская+рыбалка+Комарово',
   },
   schedule: [
-    { time: '9:40',  title: 'Регистрация брака во Дворце бракосочетания №2 (для желающих)', icon: '💍' },
-    { time: '15:00', title: 'Сбор гостей в "Русской рыбалке"', icon: '🍽️' },
-    { time: '16:00', title: 'Церемония бракосочетания и начало программы', icon: '✨' },
-    { time: '22:00', title: 'Торт и танцы', icon: '💃' },
-    { time: '23:00', title: 'Завершение вечера, трансфер до метро', icon: '🚌' },
+    {
+      time: '9:40',
+      title: 'Регистрация брака во Дворце бракосочетания №2 (для желающих)',
+      svg: `<svg viewBox="0 0 60 60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="22" cy="30" r="13"/><circle cx="38" cy="30" r="13"/></svg>`,
+    },
+    {
+      time: '15:00',
+      title: 'Сбор гостей в "Русской рыбалке"',
+      svg: `<svg viewBox="0 0 60 60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M30 8C19 8 11 17 11 27C11 40 30 54 30 54C30 54 49 40 49 27C49 17 41 8 30 8Z"/><circle cx="30" cy="27" r="7"/></svg>`,
+    },
+    {
+      time: '16:00',
+      title: 'Церемония бракосочетания и начало программы',
+      svg: `<svg viewBox="0 0 60 60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M20 10L15 32H25Z"/><line x1="20" y1="32" x2="20" y2="50"/><line x1="14" y1="50" x2="26" y2="50"/><path d="M40 10L35 32H45Z"/><line x1="40" y1="32" x2="40" y2="50"/><line x1="34" y1="50" x2="46" y2="50"/></svg>`,
+    },
+    {
+      time: '22:00',
+      title: 'Торт и танцы',
+      svg: `<svg viewBox="0 0 60 60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="30" y1="10" x2="30" y2="17"/><ellipse cx="30" cy="8" rx="2.5" ry="3.5"/><rect x="18" y="19" width="24" height="9" rx="2"/><rect x="13" y="28" width="34" height="9" rx="2"/><rect x="10" y="37" width="40" height="10" rx="2"/></svg>`,
+    },
+    {
+      time: '23:00',
+      title: 'Завершение вечера, трансфер до метро',
+      svg: `<svg viewBox="0 0 60 60" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="7" y="15" width="46" height="26" rx="5"/><line x1="7" y1="27" x2="53" y2="27"/><rect x="11" y="18" width="11" height="8" rx="1"/><rect x="25" y="18" width="11" height="8" rx="1"/><circle cx="17" cy="44" r="5"/><circle cx="43" cy="44" r="5"/><line x1="22" y1="41" x2="38" y2="41"/></svg>`,
+    },
   ],
   rsvpEmail: 'our.wedding@example.com',
   hashtag: '#ИванИЯна2026',
@@ -165,7 +185,7 @@ function initScrollAnimations(): void {
         }
       });
     },
-    { threshold: 0.15 },
+    { threshold: 0.05 },
   );
 
   document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
