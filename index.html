@@ -21,9 +21,9 @@
       --text-muted:  #071739;
       --text-on-sage: #ffffff;           /* text colour on sage bg — may diverge */
 
-      --font-serif:  'Exo 2', sans-serif;
       --font-sans:   'Exo 2', sans-serif;
-      --font-script: 'Exo 2', sans-serif;
+      --font-serif:  var(--font-sans);
+      --font-script: var(--font-sans);
 
       --section-pad: clamp(4rem, 10vw, 8rem);
       --radius:      4px;
@@ -44,7 +44,7 @@
 
     .section-title {
       font-size: clamp(2.5rem, 8vw, 4.5rem);
-      color: #071739;
+      color: var(--text);
       text-align: center;
       margin-bottom: 0.5rem;
       font-family: var(--font-sans);
@@ -383,7 +383,7 @@
       overflow: visible;
     }
     .venue-section::after { display: none; }
-    .venue-section .section-title { color: #071739; }
+    .venue-section .section-title { color: var(--text); }
     .venue-section .venue-name { font-family: var(--font-sans); }
     .venue-section .section-subtitle { color: var(--white); }
     .venue-section .sage-line { background: var(--white); }
@@ -424,7 +424,7 @@
       font-family: var(--font-sans);
       font-size: 1rem;
       letter-spacing: 0.05em;
-      color: #071739;
+      color: var(--text);
       margin-top: 1rem;
     }
 
@@ -525,7 +525,7 @@
       position: relative;
       z-index: 4;
     }
-    .details-section .section-title { color: #071739; }
+    .details-section .section-title { color: var(--text); }
     .details-section .section-subtitle { color: var(--text-muted); }
     .details-section .sage-line { background: var(--sage); opacity: 0.3; margin-bottom: 1rem; }
 
@@ -903,7 +903,7 @@
     .dresscode-text p {
       font-family: var(--font-sans);
       font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: #071739;
+      color: var(--text);
       line-height: 1.5;
       margin: 0;
     }
@@ -987,7 +987,7 @@
     <div class="calendar-wrap">
       <div class="calendar-grid animate-on-scroll" id="calendar-grid"></div>
     </div>
-    <img class="heart-decor" style="top:-45px;right:25px;width:80px;height:80px;" src="сердце_final.png" alt="">
+    <img class="heart-decor" style="top:-45px;right:25px;width:80px;height:80px;" src="heart-final.png" alt="">
   </section>
 
   <!-- Фото полоса -->
@@ -1014,7 +1014,7 @@
 
   <!-- Программа -->
   <section class="schedule-section section--sage" id="schedule">
-    <img class="heart-decor" style="top:-45px;left:25px;width:80px;height:80px;" src="сердце_final.png" alt="">
+    <img class="heart-decor" style="top:-45px;left:25px;width:80px;height:80px;" src="heart-final.png" alt="">
     <h2 class="section-title animate-on-scroll">Программа</h2>
 
     <div class="schedule-list animate-on-scroll" id="schedule-list">
@@ -1092,7 +1092,7 @@
   <section class="finale-section">
     <img class="finale-photo" src="photo5.jpg" alt="" />
     <p class="finale-text animate-on-scroll">ВСЕХ ЖДЁМ</p>
-    <img class="heart-decor" style="top:29%;left:48.5%;width:30px;height:30px;" src="сердце_final.png" alt="">
+    <img class="heart-decor" style="top:29%;left:48.5%;width:30px;height:30px;" src="heart-final.png" alt="">
   </section>
 
   <script type="module" src="dist/main.js"></script>

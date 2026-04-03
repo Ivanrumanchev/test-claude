@@ -13,33 +13,12 @@ const WEDDING_CONFIG: WeddingConfig = {
     mapUrl: 'https://maps.google.com/maps?q=Русская+рыбалка+Комарово',
   },
   schedule: [
-    {
-      time: '9:40',
-      title: 'Регистрация брака',
-      svg: `<img src="https://cdn-icons-png.flaticon.com/128/706/706455.png" alt="">`,
-    },
-    {
-      time: '15:00',
-      title: 'Сбор гостей',
-      svg: `<img src="https://cdn-icons-png.flaticon.com/128/2776/2776074.png" alt="">`,
-    },
-    {
-      time: '16:00',
-      title: 'Церемония и банкет',
-      svg: `<img src="https://cdn-icons-png.flaticon.com/128/3314/3314457.png" alt="">`,
-    },
-    {
-      time: '22:00',
-      title: 'Торт и танцы',
-      svg: `<img src="https://cdn-icons-png.flaticon.com/128/4214/4214366.png" alt="">`,
-    },
-    {
-      time: '23:00',
-      title: 'Завершение банкета, трансфер до метро',
-      svg: `<img src="https://cdn-icons-png.flaticon.com/128/4274/4274245.png" alt="">`,
-    },
+    { time: '9:40',  title: 'Регистрация брака',                      iconUrl: 'https://cdn-icons-png.flaticon.com/128/706/706455.png' },
+    { time: '15:00', title: 'Сбор гостей',                             iconUrl: 'https://cdn-icons-png.flaticon.com/128/2776/2776074.png' },
+    { time: '16:00', title: 'Церемония и банкет',                      iconUrl: 'https://cdn-icons-png.flaticon.com/128/3314/3314457.png' },
+    { time: '22:00', title: 'Торт и танцы',                            iconUrl: 'https://cdn-icons-png.flaticon.com/128/4214/4214366.png' },
+    { time: '23:00', title: 'Завершение банкета, трансфер до метро',   iconUrl: 'https://cdn-icons-png.flaticon.com/128/4274/4274245.png' },
   ],
-  rsvpEmail: 'our.wedding@example.com',
   hashtag: '#ИванИЯна2026',
 } as const;
 
@@ -72,19 +51,37 @@ function renderSchedule(): void {
 
   const fragment = document.createDocumentFragment();
 
-  WEDDING_CONFIG.schedule.forEach(({ time, title, svg }) => {
+  WEDDING_CONFIG.schedule.forEach(({ time, title, iconUrl }) => {
     const item = document.createElement('div');
     item.className = 'timeline-item';
-    item.innerHTML = `
-      <div class="timeline-icon">${svg}</div>
-      <div class="timeline-spine">
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-content">
-        <span class="timeline-time">${time}</span>
-        <span class="timeline-title">${title}</span>
-      </div>
-    `;
+
+    const img = document.createElement('img');
+    img.src = iconUrl;
+    img.alt = '';
+    const iconDiv = document.createElement('div');
+    iconDiv.className = 'timeline-icon';
+    iconDiv.appendChild(img);
+
+    const dot = document.createElement('div');
+    dot.className = 'timeline-dot';
+    const spine = document.createElement('div');
+    spine.className = 'timeline-spine';
+    spine.appendChild(dot);
+
+    const timeSpan = document.createElement('span');
+    timeSpan.className = 'timeline-time';
+    timeSpan.textContent = time;
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'timeline-title';
+    titleSpan.textContent = title;
+    const content = document.createElement('div');
+    content.className = 'timeline-content';
+    content.appendChild(timeSpan);
+    content.appendChild(titleSpan);
+
+    item.appendChild(iconDiv);
+    item.appendChild(spine);
+    item.appendChild(content);
     fragment.appendChild(item);
   });
 
@@ -108,7 +105,7 @@ function renderSaveDateCalendar(): void {
     'январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
     'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь',
   ];
-  monthLabel.textContent = '';
+  monthLabel.textContent = monthNames[month];
 
   // Weekday headers (Mon-first)
   const weekdays = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
@@ -167,18 +164,6 @@ function renderSaveDateCalendar(): void {
 }
 
 
-// ─── Плавная прокрутка ────────────────────────────────────────────────────────
-
-function initSmoothScroll(): void {
-  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href') ?? '');
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-}
-
 // ─── Анимации при прокрутке ───────────────────────────────────────────────────
 
 function initScrollAnimations(): void {
@@ -220,7 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   renderSchedule();
   renderSaveDateCalendar();
-  initSmoothScroll();
   initScrollAnimations();
 
 });

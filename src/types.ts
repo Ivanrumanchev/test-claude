@@ -4,7 +4,6 @@ export interface WeddingConfig {
   readonly date: Date;
   readonly venue: WeddingVenue;
   readonly schedule: readonly ScheduleItem[];
-  readonly rsvpEmail: string;
   readonly hashtag: string;
 }
 
@@ -17,7 +16,7 @@ export interface WeddingVenue {
 export interface ScheduleItem {
   readonly time: string;
   readonly title: string;
-  readonly svg: string;
+  readonly iconUrl: string;
 }
 
 export interface CountdownResult {
@@ -27,11 +26,3 @@ export interface CountdownResult {
   readonly seconds: number;
 }
 
-export type RSVPStatus = 'attending' | 'not_attending' | 'pending';
-
-export interface RSVPFormData {
-  readonly name: string;
-  readonly guestsCount: number;
-  readonly status: RSVPStatus;
-  readonly message?: string;
-}
