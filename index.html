@@ -1174,8 +1174,10 @@
   <section class="hero">
     <div class="hero-photo-wrap">
       <picture>
-        <source media="(min-width: 1024px)" srcset="photo3.jpg">
-        <img class="hero-photo" src="photo1.jpg" alt="" fetchpriority="high" />
+        <source media="(min-width: 1024px)" srcset="photo3-desktop.webp" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="photo3-desktop.jpg">
+        <source srcset="photo1-mobile.webp" type="image/webp">
+        <img class="hero-photo" src="photo1-mobile.jpg" alt="" fetchpriority="high" />
       </picture>
     </div>
     <div class="hero-content">
@@ -1194,14 +1196,19 @@
     <div class="calendar-wrap">
       <div class="calendar-grid animate-on-scroll" id="calendar-grid"></div>
     </div>
-    <img class="heart-decor" style="top:-45px;right:25px;width:80px;height:80px;" src="heart-final.png" alt="" loading="lazy">
+    <picture>
+      <source srcset="heart-final.webp" type="image/webp">
+      <img class="heart-decor" style="top:-45px;right:25px;width:80px;height:80px;" src="heart-final.png" alt="" loading="lazy" decoding="async">
+    </picture>
   </section>
 
   <!-- Фото полоса -->
   <div class="photo-strip">
     <picture>
+      <source media="(min-width: 1024px)" srcset="photo6.webp" type="image/webp">
       <source media="(min-width: 1024px)" srcset="photo6.png">
-      <img src="photo2.jpg" alt="" loading="lazy" />
+      <source srcset="photo2.webp" type="image/webp">
+      <img src="photo2.jpg" alt="" loading="lazy" decoding="async" />
     </picture>
     <div class="photo-strip-text">
       <p>Этим летом состоится важное<br>событие — наша свадьба.</p>
@@ -1214,8 +1221,14 @@
     <h2 class="section-title animate-on-scroll">Место проведения</h2>
 
     <div class="venue-photo-wrap">
-      <img src="place1.jpg" alt="" loading="lazy" />
-      <img src="place2.jpg" alt="" loading="lazy" />
+      <picture>
+        <source srcset="place1.webp" type="image/webp">
+        <img src="place1.jpg" alt="" loading="lazy" decoding="async" />
+      </picture>
+      <picture>
+        <source srcset="place2.webp" type="image/webp">
+        <img src="place2.jpg" alt="" loading="lazy" decoding="async" />
+      </picture>
     </div>
 
     <p class="venue-address animate-on-scroll"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#071739" style="vertical-align:middle;margin-right:5px;margin-bottom:2px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://yandex.com/maps/-/CPbfuP82" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">«Русская рыбалка»<br>Приморское ш. 452А, Комарово</a></p>
@@ -1224,7 +1237,10 @@
 
   <!-- Программа -->
   <section class="schedule-section section--sage" id="schedule">
-    <img class="heart-decor" style="top:-45px;left:25px;width:80px;height:80px;" src="heart-final.png" alt="" loading="lazy">
+    <picture>
+      <source srcset="heart-final.webp" type="image/webp">
+      <img class="heart-decor" style="top:-45px;left:25px;width:80px;height:80px;" src="heart-final.png" alt="" loading="lazy" decoding="async">
+    </picture>
     <h2 class="section-title animate-on-scroll">Программа</h2>
 
     <div class="schedule-list animate-on-scroll" id="schedule-list">
@@ -1253,7 +1269,12 @@
 
   <!-- Обратный отсчёт -->
   <div class="countdown-wrapper">
-  <img class="countdown-bottom-photo" src="photo4.jpg" alt="" loading="lazy" />
+  <picture>
+    <source media="(min-width: 1024px)" srcset="photo4-desktop.webp" type="image/webp">
+    <source media="(min-width: 1024px)" srcset="photo4-desktop.jpg">
+    <source srcset="photo4-mobile.webp" type="image/webp">
+    <img class="countdown-bottom-photo" src="photo4-mobile.jpg" alt="" loading="lazy" decoding="async" />
+  </picture>
   <section class="countdown-section" id="countdown">
     <div class="countdown-grid animate-on-scroll">
       <div class="countdown-item">
@@ -1300,9 +1321,17 @@
 
   <!-- Финальный блок + футер -->
   <section class="finale-section">
-    <img class="finale-photo" src="photo5.jpg" alt="" loading="lazy" />
+    <picture>
+      <source media="(min-width: 1024px)" srcset="photo5-desktop.webp" type="image/webp">
+      <source media="(min-width: 1024px)" srcset="photo5-desktop.jpg">
+      <source srcset="photo5-mobile.webp" type="image/webp">
+      <img class="finale-photo" src="photo5-mobile.jpg" alt="" loading="lazy" decoding="async" />
+    </picture>
     <p class="finale-text animate-on-scroll">ВСЕХ ЖДЁМ</p>
-    <img class="heart-decor" src="heart-final.png" alt="" loading="lazy">
+    <picture>
+      <source srcset="heart-final.webp" type="image/webp">
+      <img class="heart-decor" src="heart-final.png" alt="" loading="lazy" decoding="async">
+    </picture>
   </section>
 
   <script type="module" src="dist/main.js"></script>

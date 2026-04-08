@@ -7,11 +7,13 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "serve": "npx serve .",
-    "test": "tsc -p tsconfig.test.json && node --test dist-test/pluralize.test.js"
+    "test": "tsc -p tsconfig.test.json && node --test dist-test/pluralize.test.js",
+    "optimize": "node scripts/optimize-images.js"
   },
   "devDependencies": {
     "@playwright/mcp": "^0.0.68",
     "@types/node": "^25.5.2",
+    "sharp": "^0.34.5",
     "typescript": "^5.4.0"
   }
 }
